@@ -1,0 +1,14 @@
+{
+  "name": "aoc2015",
+  "version": "0.0.1",
+  "description": "Advent Of Code 2015",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "aoc2015"
+  ],
+  "author": "Xavier FILIPPI",
+  "license": "ISC"
+}
