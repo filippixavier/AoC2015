@@ -39,9 +39,23 @@ async function askDay() {
 
 async function init() {
     process.title = 'Advent Of Code 2015';
-    const day = await askDay();
+    let day;
+    try {
+        day = await askDay();
+    } catch (e) {
+        console.error(e);
+        return;
+    }
 
     console.log(`Attempting to launch day ${day}`);
+
+    try {
+        console.log(`./days/day${day}.mjs`);
+        const {default: module} = await import(`./days/day${day}.mjs`);
+        module.solve();
+    } catch (e) {
+        console.error(`Error while attempting to solve day ${day}: ${e}`);
+    }
 }
 
 init();
