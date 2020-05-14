@@ -27,7 +27,7 @@ async function askDay() {
         rl.prompt();
 
         rl.on('line', (input) => {
-            if (isNaN(input)) {
+            if (isNaN(input) || input === '') {
                 reject('Please enter a valid day');
             } else {
                 resolve(parseInt(input));
